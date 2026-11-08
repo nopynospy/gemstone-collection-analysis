@@ -1,0 +1,16 @@
+specimen_id,mineral_name,filename,glcm_contrast,glcm_homogeneity,glcm_energy,pct_azurite,pct_chrysocolla_quartz,pct_malachite,pct_host_matrix
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_001.png,69.2,0.255,0.0211,3.16,10.29,3.16,86.55
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_002.png,62.11,0.315,0.0344,2.97,21.54,14.01,61.48
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_003.png,58.97,0.319,0.0418,4.18,16.82,17.86,61.14
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_004.png,32.12,0.341,0.0344,4.37,13.26,19.03,63.33
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_005.png,61.53,0.288,0.0308,3.03,13.23,19.9,63.84
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_006.png,29.4,0.357,0.0316,17.23,21.85,20.37,40.55
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_007.png,27.27,0.389,0.0432,8.42,30.96,31.69,28.92
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_008.png,48.08,0.33,0.0334,13.71,28.94,29.43,27.92
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_009.png,50.0,0.325,0.0271,9.89,26.3,35.0,28.82
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_010.png,35.09,0.322,0.0243,19.28,19.28,24.25,37.19
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_011.png,14.27,0.512,0.0784,6.27,34.21,10.78,48.74
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_012.png,17.18,0.442,0.0394,13.01,32.8,17.31,36.88
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_013.png,15.86,0.388,0.0351,14.84,18.41,20.16,46.59
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_014.png,15.03,0.452,0.0502,13.69,24.0,25.2,37.11
+SPEC-0002,Chrysocolla-Azurite-Malachite,cm_015.png,36.1,0.325,0.028,14.21,19.15,18.07,48.58
