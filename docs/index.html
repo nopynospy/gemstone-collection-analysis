@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantitative Mineral Microscopy Atlas</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --gold: #d29922;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 2rem 1rem; line-height: 1.5; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    
+    header { border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+    h1 { font-size: 1.8rem; color: #f0f6fc; display: flex; align-items: center; gap: 0.75rem; }
+    .badge { font-size: 0.75rem; background: #1f6feb26; color: var(--accent); border: 1px solid #1f6feb; padding: 0.2rem 0.6rem; border-radius: 999px; }
+    p.subtitle { color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem; }
+
+    /* Summary Stats Ribbon */
+    .stats-ribbon { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; text-align: center; }
+    .stat-val { font-size: 1.6rem; font-weight: bold; color: var(--accent); }
+    .stat-lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-top: 0.25rem; }
+
+    /* Grid for Specimen Cards */
+    .specimen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+    .card-header { padding: 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; }
+    .card-title { font-size: 1.1rem; color: #fff; font-weight: 600; }
+    .card-id { font-size: 0.75rem; font-family: monospace; color: var(--text-muted); }
+
+    .img-container { width: 100%; height: 220px; background: #000; overflow: hidden; position: relative; }
+    .img-container img { width: 100%; height: 100%; object-fit: cover; }
+    .tag { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); }
+
+    .card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .meta-list { font-size: 0.85rem; margin-bottom: 1rem; }
+    .meta-item { display: flex; justify-content: space-between; margin-bottom: 0.35rem; color: var(--text-muted); }
+    .meta-item span:last-child { color: var(--text); font-weight: 500; }
+
+    /* Data Table Section */
+    .table-section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-top: 2rem; }
+    .table-section h2 { font-size: 1.2rem; color: #fff; margin-bottom: 1rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { padding: 0.65rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--text-muted); background: #0d1117; font-weight: 600; }
+    tr:hover { background: #1c2128; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mineral Microscopy Atlas <span class="badge">Open CV & Photometry</span></h1>
+      <p class="subtitle">Quantitative computer vision atlas characterizing mineral specimens via digital optical microscopy, GLCM texture analysis, and spatial frequency profiling.</p>
+    </header>
+
+    <!-- Project Metrics Ribbon -->
+    <div class="stats-ribbon">
+      <div class="stat-card">
+        <div class="stat-val" id="specimenCount">1</div>
+        <div class="stat-lbl">Cataloged Specimens</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">Tomlov DM9</div>
+        <div class="stat-lbl">Primary Optical Sensor</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">3.5 µm/px</div>
+        <div class="stat-lbl">Spatial Resolution Scale</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="totalFrames">32</div>
+        <div class="stat-lbl">Processed Vector Captures</div>
+      </div>
+    </div>
+
+    <!-- Specimen Catalog Cards -->
+    <h2 style="font-size: 1.2rem; color: #fff; margin-bottom: 1rem;">Specimen Catalog</h2>
+    <div class="specimen-grid">
+      
+      <!-- SPECIMEN #001: Tiger's Eye / Hawk's Eye -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Tiger's Eye / Hawk's Eye</div>
+          <div class="card-id">SPEC-0001</div>
+        </div>
+        <div class="img-container">
+          <img src="assets/thumbnails/specimen_a_thumb.jpg" alt="Tiger's Eye Micro-texture">
+          <span class="tag">Chatoyant Quartz</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-list">
+            <div class="meta-item"><span>Origin</span><span>Northern Cape, South Africa</span></div>
+            <div class="meta-item"><span>Composition</span><span>Silicified Crocidolite (Limonite/Hematite)</span></div>
+            <div class="meta-item"><span>Optical Phenom</span><span>Chatoyancy (92° Parallel Axis)</span></div>
+            <div class="meta-item"><span>GLCM Contrast (Face A)</span><span>25.32 ± 25.31</span></div>
+            <div class="meta-item"><span>Mean Golden Silk Area</span><span>17.1% (Side A) | 10.0% (Side B)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEMPLATE FOR SPECIMEN #002 (Uncomment / duplicate when ready) -->
+      <!--
+      <div class="card" style="opacity: 0.6;">
+        <div class="card-header">
+          <div class="card-title">Malachite / Chrysocolla</div>
+          <div class="card-id">SPEC-0002</div>
+        </div>
+        <div class="img-container" style="display:flex; align-items:center; justify-content:center; color: var(--text-muted); font-size: 0.85rem;">
+          [ Pending Acquisition ]
+        </div>
+        <div class="card-body">
+          <div class="meta-list">
+            <div class="meta-item"><span>Origin</span><span>Katanga, DRC</span></div>
+            <div class="meta-item"><span>Classification</span><span>Copper Carbonate Hydroxide</span></div>
+            <div class="meta-item"><span>Texture Metric</span><span>Botryoidal Concentric Rings</span></div>
+          </div>
+        </div>
+      </div>
+      -->
+
+    </div>
+
+    <!-- Master Extraction Records Table -->
+    <div class="table-section">
+      <h2>Recent Feature Vectors</h2>
+      <div style="overflow-x: auto;">
+        <table id="recordsTable">
+          <thead>
+            <tr>
+              <th>Specimen ID</th>
+              <th>Frame ID</th>
+              <th>Face</th>
+              <th>GLCM Contrast</th>
+              <th>Homogeneity</th>
+              <th>Dominant Angle</th>
+              <th>Dark Matrix %</th>
+              <th>Mid Quartz %</th>
+              <th>Gold Silk %</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="9" style="text-align:center; color: var(--text-muted);">Loading dataset...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.querySelector('#recordsTable tbody');
+        tbody.innerHTML = '';
+        document.getElementById('totalFrames').innerText = data.length;
+        
+        data.slice(0, 20).forEach(row => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><code style="color:var(--accent);">SPEC-0001</code></td>
+            <td><code>${row.filename}</code></td>
+            <td><strong>${row.face}</strong></td>
+            <td>${row.glcm_contrast}</td>
+            <td>${row.glcm_homogeneity}</td>
+            <td>${row.dominant_angle_deg}°</td>
+            <td>${row.pct_dark_matrix}%</td>
+            <td>${row.pct_mid_quartz}%</td>
+            <td>${row.pct_gold_silk}%</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(err => {
+        console.error("Could not load data.json", err);
+      });
+  </script>
+</body>
+</html>
