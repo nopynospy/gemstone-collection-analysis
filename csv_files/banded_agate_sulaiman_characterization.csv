@@ -1,0 +1,13 @@
+specimen_id,mineral_name,filename,glcm_contrast,glcm_homogeneity,glcm_energy,angular_entropy,mean_edge_gradient,pct_carnelian_band,pct_amber_chalcedony,pct_cream_silica
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_008.png,13.35,0.351,0.0355,0.741,23.61,41.05,40.77,18.18
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_011.png,10.47,0.402,0.0397,0.749,19.08,31.26,43.3,25.45
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_007.png,8.57,0.423,0.0404,0.738,18.83,37.0,38.98,24.02
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_014.png,7.08,0.463,0.0522,0.741,18.44,37.74,36.42,25.84
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_010.png,8.3,0.438,0.0456,0.749,17.31,26.11,37.72,36.17
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_013.png,8.36,0.452,0.0479,0.747,17.53,38.86,46.51,14.63
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_016.png,6.64,0.475,0.0456,0.747,15.96,37.22,34.55,28.23
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_002.png,9.98,0.42,0.0492,0.746,16.8,26.5,37.14,36.36
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_018.png,5.29,0.562,0.0916,0.747,14.88,28.56,34.25,37.19
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_023.png,10.03,0.398,0.0338,0.743,17.26,37.26,35.91,26.83
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_012.png,8.94,0.472,0.0468,0.747,17.83,63.89,26.47,9.64
+SPEC-0005,Fortification Banded Agate (Sulaiman Besar),basb_020.png,8.07,0.446,0.0381,0.746,17.06,49.27,29.41,21.32
