@@ -76,7 +76,7 @@
         <div class="stat-lbl">Spatial Resolution Scale</div>
       </div>
       <div class="stat-card">
-        <div class="stat-val" id="totalFrames">32</div>
+        <div class="stat-val" id="totalFrames">—</div>
         <div class="stat-lbl">Processed Vector Captures</div>
       </div>
     </div>
@@ -195,44 +195,64 @@
     </div>
   </div>
 
-  <script>
-    fetch('./data.json')
-    .then(res => res.json())
-    .then(data => {
-        const tbody = document.querySelector('#recordsTable tbody');
-        tbody.innerHTML = '';
+<script>
+    // Fetch with cache-busting timestamp to prevent stale browser cache
+    fetch('./data.json?t=' + new Date().getTime())
+      .then(res => {
+        if (!res.ok) throw new Error("HTTP error " + res.status);
+        return res.json();
+      })
+      .then(data => {
+        // 1. Immediately update the dynamic counter
         const counter = document.getElementById('totalFrames');
         if (counter) counter.innerText = data.length;
 
-        data.slice(0, 20).forEach(row => {
-        const tr = document.createElement('tr');
-        const specId = row.specimen_id || 'SPEC-0001';
-        const faceOrPhase = row.face || row.mineral_name || '-';
-        const dark = row.pct_dark_matrix ?? row.pct_host_matrix ?? '-';
-        const mid = row.pct_mid_quartz ?? row.pct_chrysocolla_quartz ?? '-';
-        const activeColor = row.pct_gold_silk !== undefined 
-            ? `${row.pct_gold_silk}% (Gold)` 
-            : (row.pct_azurite !== undefined ? `${row.pct_azurite}% (Azurite)` : '-');
+        // 2. Populate the table
+        const tbody = document.querySelector('#recordsTable tbody');
+        if (!tbody) return;
+        tbody.innerHTML = '';
 
-        tr.innerHTML = `
+        data.forEach(row => {
+          const tr = document.createElement('tr');
+          
+          const specId = row.specimen_id || 'SPEC-0001';
+          const nameOrFace = row.face || row.mineral_name || '-';
+          const contrast = row.glcm_contrast ?? '-';
+          const homog = row.glcm_homogeneity ?? '-';
+          const angle = row.dominant_angle_deg !== undefined ? `${row.dominant_angle_deg}°` : 'N/A';
+          
+          // Phase 1 (Dark matrix / host)
+          const dark = row.pct_dark_matrix ?? row.pct_host_matrix ?? '-';
+          
+          // Phase 2 (Mid-tone / quartz / intermediate blade)
+          const mid = row.pct_mid_quartz ?? row.pct_chrysocolla_quartz ?? row.pct_intermediate_blade ?? '-';
+          
+          // Phase 3 (Active feature: Gold silk, Azurite, or Bright facet)
+          let active = '-';
+          if (row.pct_gold_silk !== undefined) {
+            active = `${row.pct_gold_silk}% (Gold)`;
+          } else if (row.pct_azurite !== undefined) {
+            active = `${row.pct_azurite}% (Azurite)`;
+          } else if (row.pct_bright_facet !== undefined) {
+            active = `${row.pct_bright_facet}% (Facet)`;
+          }
+
+          tr.innerHTML = `
             <td><code style="color:var(--accent);">${specId}</code></td>
             <td><code>${row.filename}</code></td>
-            <td><strong>${faceOrPhase}</strong></td>
-            <td>${row.glcm_contrast ?? '-'}</td>
-            <td>${row.glcm_homogeneity ?? '-'}</td>
-            <td>${row.dominant_angle_deg !== undefined ? row.dominant_angle_deg + '°' : 'N/A'}</td>
+            <td><strong>${nameOrFace}</strong></td>
+            <td>${contrast}</td>
+            <td>${homog}</td>
+            <td>${angle}</td>
             <td>${dark !== '-' ? dark + '%' : '-'}</td>
             <td>${mid !== '-' ? mid + '%' : '-'}</td>
-            <td>${activeColor}</td>
-        `;
-        tbody.appendChild(tr);
+            <td>${active}</td>
+          `;
+          tbody.appendChild(tr);
         });
-    })
-    .catch(err => {
-        console.error("Could not load data.json", err);
-        document.querySelector('#recordsTable tbody').innerHTML = 
-        '<tr><td colspan="9" style="text-align:center; color:#f85149;">Failed to load data.json</td></tr>';
-    });
-  </script>
-</body>
+      })
+      .catch(err => {
+        console.error("Could not load data.json:", err);
+      });
+  </script></body>
 </html>
