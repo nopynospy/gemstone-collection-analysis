@@ -538,5 +538,115 @@
     "pct_bright_facet": 39.18,
     "specimen_id": "SPEC-0003",
     "mineral_name": "Bladed Blue Kyanite"
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_001.png",
+    "glcm_contrast": 9.32,
+    "glcm_homogeneity": 0.523,
+    "mean_edge_gradient": 16.59,
+    "pct_dark_matrix": 37.79,
+    "pct_alteration_halo": 32.39,
+    "pct_translucent_chalcedony": 29.81
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_002.png",
+    "glcm_contrast": 10.56,
+    "glcm_homogeneity": 0.446,
+    "mean_edge_gradient": 17.38,
+    "pct_dark_matrix": 31.09,
+    "pct_alteration_halo": 34.26,
+    "pct_translucent_chalcedony": 34.64
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_003.png",
+    "glcm_contrast": 7.8,
+    "glcm_homogeneity": 0.551,
+    "mean_edge_gradient": 12.15,
+    "pct_dark_matrix": 55.39,
+    "pct_alteration_halo": 26.01,
+    "pct_translucent_chalcedony": 18.6
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_004.png",
+    "glcm_contrast": 6.98,
+    "glcm_homogeneity": 0.638,
+    "mean_edge_gradient": 11.44,
+    "pct_dark_matrix": 58.44,
+    "pct_alteration_halo": 26.35,
+    "pct_translucent_chalcedony": 15.21
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_005.png",
+    "glcm_contrast": 9.64,
+    "glcm_homogeneity": 0.45,
+    "mean_edge_gradient": 12.48,
+    "pct_dark_matrix": 71.84,
+    "pct_alteration_halo": 22.45,
+    "pct_translucent_chalcedony": 5.71
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_006.png",
+    "glcm_contrast": 8.93,
+    "glcm_homogeneity": 0.457,
+    "mean_edge_gradient": 12.43,
+    "pct_dark_matrix": 72.44,
+    "pct_alteration_halo": 22.45,
+    "pct_translucent_chalcedony": 5.11
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_007.png",
+    "glcm_contrast": 10.49,
+    "glcm_homogeneity": 0.468,
+    "mean_edge_gradient": 17.3,
+    "pct_dark_matrix": 32.56,
+    "pct_alteration_halo": 29.25,
+    "pct_translucent_chalcedony": 38.19
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_008.png",
+    "glcm_contrast": 10.96,
+    "glcm_homogeneity": 0.492,
+    "mean_edge_gradient": 15.6,
+    "pct_dark_matrix": 44.49,
+    "pct_alteration_halo": 28.49,
+    "pct_translucent_chalcedony": 27.02
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_009.png",
+    "glcm_contrast": 7.16,
+    "glcm_homogeneity": 0.585,
+    "mean_edge_gradient": 12.19,
+    "pct_dark_matrix": 53.67,
+    "pct_alteration_halo": 27.64,
+    "pct_translucent_chalcedony": 18.69
+  },
+  {
+    "specimen_id": "SPEC-0004",
+    "mineral_name": "Akik Sulaiman Karang (Scenic Chalcedony)",
+    "filename": "bas_010.png",
+    "glcm_contrast": 8.64,
+    "glcm_homogeneity": 0.452,
+    "mean_edge_gradient": 12.82,
+    "pct_dark_matrix": 53.33,
+    "pct_alteration_halo": 29.92,
+    "pct_translucent_chalcedony": 16.75
   }
 ]

@@ -1,0 +1,11 @@
+specimen_id,mineral_name,filename,glcm_contrast,glcm_homogeneity,mean_edge_gradient,pct_dark_matrix,pct_alteration_halo,pct_translucent_chalcedony
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_001.png,9.32,0.523,16.59,37.79,32.39,29.81
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_002.png,10.56,0.446,17.38,31.09,34.26,34.64
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_003.png,7.8,0.551,12.15,55.39,26.01,18.6
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_004.png,6.98,0.638,11.44,58.44,26.35,15.21
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_005.png,9.64,0.45,12.48,71.84,22.45,5.71
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_006.png,8.93,0.457,12.43,72.44,22.45,5.11
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_007.png,10.49,0.468,17.3,32.56,29.25,38.19
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_008.png,10.96,0.492,15.6,44.49,28.49,27.02
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_009.png,7.16,0.585,12.19,53.67,27.64,18.69
+SPEC-0004,Akik Sulaiman Karang (Scenic Chalcedony),bas_010.png,8.64,0.452,12.82,53.33,29.92,16.75
