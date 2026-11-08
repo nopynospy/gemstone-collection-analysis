@@ -64,7 +64,7 @@
     <!-- Project Metrics Ribbon -->
     <div class="stats-ribbon">
       <div class="stat-card">
-        <div class="stat-val" id="specimenCount">2</div>
+        <div class="stat-val" id="specimenCount">3</div>
         <div class="stat-lbl">Cataloged Specimens</div>
       </div>
       <div class="stat-card">
@@ -126,6 +126,27 @@
         </div>
       </div>
 
+    <!-- SPECIMEN #003: Bladed Blue Kyanite -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Bladed Blue Kyanite</div>
+          <div class="card-id">SPEC-0003</div>
+        </div>
+        <div class="img-container">
+          <img src="assets/thumbnails/specimen_0003_thumb.jpg" alt="Blue Kyanite Micro-texture">
+          <span class="tag" style="border-color: #58a6ff; color: #58a6ff;">Cleavage Anisotropy</span>
+        </div>
+        <div class="card-body">
+          <div class="meta-list">
+            <div class="meta-item"><span>Mineral System</span><span>Al₂SiO₅ Metamorphic Silicate</span></div>
+            <div class="meta-item"><span>Cleavage Vector</span><span>92.5° ± 0.0° (Locked Axis)</span></div>
+            <div class="meta-item"><span>GLCM Contrast</span><span>30.31 ± 12.96 (Stepped Facets)</span></div>
+            <div class="meta-item"><span>Alignment Ratio</span><span>1.99x Baseline Coherence</span></div>
+            <div class="meta-item"><span>Bright Facet Area</span><span>36.44% ± 6.83%</span></div>
+          </div>
+        </div>
+      </div>
+
       <!-- TEMPLATE FOR SPECIMEN #002 (Uncomment / duplicate when ready) -->
       <!--
       <div class="card" style="opacity: 0.6;">
@@ -175,32 +196,43 @@
   </div>
 
   <script>
-    fetch('data.json')
-      .then(res => res.json())
-      .then(data => {
+    fetch('./data.json')
+    .then(res => res.json())
+    .then(data => {
         const tbody = document.querySelector('#recordsTable tbody');
         tbody.innerHTML = '';
-        document.getElementById('totalFrames').innerText = data.length;
-        
+        const counter = document.getElementById('totalFrames');
+        if (counter) counter.innerText = data.length;
+
         data.slice(0, 20).forEach(row => {
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
-            <td><code style="color:var(--accent);">SPEC-0001</code></td>
+        const tr = document.createElement('tr');
+        const specId = row.specimen_id || 'SPEC-0001';
+        const faceOrPhase = row.face || row.mineral_name || '-';
+        const dark = row.pct_dark_matrix ?? row.pct_host_matrix ?? '-';
+        const mid = row.pct_mid_quartz ?? row.pct_chrysocolla_quartz ?? '-';
+        const activeColor = row.pct_gold_silk !== undefined 
+            ? `${row.pct_gold_silk}% (Gold)` 
+            : (row.pct_azurite !== undefined ? `${row.pct_azurite}% (Azurite)` : '-');
+
+        tr.innerHTML = `
+            <td><code style="color:var(--accent);">${specId}</code></td>
             <td><code>${row.filename}</code></td>
-            <td><strong>${row.face}</strong></td>
-            <td>${row.glcm_contrast}</td>
-            <td>${row.glcm_homogeneity}</td>
-            <td>${row.dominant_angle_deg}°</td>
-            <td>${row.pct_dark_matrix}%</td>
-            <td>${row.pct_mid_quartz}%</td>
-            <td>${row.pct_gold_silk}%</td>
-          `;
-          tbody.appendChild(tr);
+            <td><strong>${faceOrPhase}</strong></td>
+            <td>${row.glcm_contrast ?? '-'}</td>
+            <td>${row.glcm_homogeneity ?? '-'}</td>
+            <td>${row.dominant_angle_deg !== undefined ? row.dominant_angle_deg + '°' : 'N/A'}</td>
+            <td>${dark !== '-' ? dark + '%' : '-'}</td>
+            <td>${mid !== '-' ? mid + '%' : '-'}</td>
+            <td>${activeColor}</td>
+        `;
+        tbody.appendChild(tr);
         });
-      })
-      .catch(err => {
+    })
+    .catch(err => {
         console.error("Could not load data.json", err);
-      });
+        document.querySelector('#recordsTable tbody').innerHTML = 
+        '<tr><td colspan="9" style="text-align:center; color:#f85149;">Failed to load data.json</td></tr>';
+    });
   </script>
 </body>
 </html>
