@@ -1,0 +1,14 @@
+# Virtual Environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Raw High-Resolution Microscopy Captures
+data/raw/
+data/**/*.png
+!assets/thumbnails/*.jpg
+
+# System / OS files
+.DS_Store
+Thumbs.db
