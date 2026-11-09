@@ -1,0 +1,13 @@
+specimen_id,mineral_name,filename,glcm_contrast,glcm_homogeneity,glcm_energy,mean_edge_gradient,pct_chlorite_dendrites,pct_transition_plumes,pct_quartz_matrix
+SPEC-0006,Dendritic Moss Agate Slab,ma_114.png,64.97,0.526,0.1399,39.46,61.11,18.55,20.34
+SPEC-0006,Dendritic Moss Agate Slab,ma_128.png,84.48,0.426,0.1073,40.06,52.78,20.59,26.64
+SPEC-0006,Dendritic Moss Agate Slab,ma_135.png,115.97,0.456,0.129,34.76,68.1,16.77,15.13
+SPEC-0006,Dendritic Moss Agate Slab,ma_091.png,78.98,0.199,0.0184,48.37,27.17,46.37,26.46
+SPEC-0006,Dendritic Moss Agate Slab,ma_068.png,74.14,0.323,0.0305,44.22,28.49,25.77,45.74
+SPEC-0006,Dendritic Moss Agate Slab,ma_100.png,79.84,0.347,0.0544,38.55,36.34,19.74,43.92
+SPEC-0006,Dendritic Moss Agate Slab,ma_123.png,42.49,0.325,0.0454,42.49,38.45,39.22,22.32
+SPEC-0006,Dendritic Moss Agate Slab,ma_053.png,59.09,0.259,0.0247,39.01,40.27,24.15,35.58
+SPEC-0006,Dendritic Moss Agate Slab,ma_162.png,60.48,0.27,0.0323,41.29,24.35,19.72,55.93
+SPEC-0006,Dendritic Moss Agate Slab,ma_067.png,72.97,0.304,0.0293,41.08,30.44,27.61,41.95
+SPEC-0006,Dendritic Moss Agate Slab,ma_190.png,45.81,0.395,0.0659,36.02,48.15,24.14,27.71
+SPEC-0006,Dendritic Moss Agate Slab,ma_121.png,59.94,0.259,0.0228,39.74,18.35,51.89,29.77
